@@ -4,15 +4,15 @@ defmodule NewRelixir.Mixfile do
   def project do
     [app: :new_relixir,
      name: "New Relixir",
-     version: "0.2.1",
+     version: "0.2.11",
      elixir: "~> 1.2",
      description: "New Relic tracking for Elixir applications.",
-     package: package,
+     package: package(),
      source_url: "https://github.com/TheRealReal/new-relixir",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     aliases: aliases,
-     deps: deps]
+     aliases: aliases(),
+     deps: deps()]
   end
 
   def application do
@@ -21,7 +21,7 @@ defmodule NewRelixir.Mixfile do
   end
 
   defp deps do
-    [{:phoenix, "~> 1.1"},
+    [{:phoenix, "~> 1.2.0"},
      {:ecto, ">= 1.1.0 and < 3.0.0"},
      {:newrelic, "~> 0.1.0"},
      {:earmark, "~> 0.1", only: :dev},
